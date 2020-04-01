@@ -37,11 +37,12 @@ type Alerts struct {
 }
 
 type Alert struct {
+	Status       map[string]interface{} `json:"status"`
+	Labels       map[string]interface{} `json:"labels"`
 	Annotations  map[string]interface{} `json:"annotations"`
+	StartsAt     string                 `json:"startsAt"`
 	EndsAt       string                 `json:"endsAt"`
 	GeneratorURL string                 `json:"generatorURL"`
-	Labels       map[string]interface{} `json:"labels"`
-	StartsAt     string                 `json:"startsAt"`
 }
 
 type Config struct {
