@@ -4,7 +4,7 @@ image_resource:
   source: {repository: golang, tag: "1.7"}
 inputs:
   - name: prometheus_bot
-    path: src/github.com/inCaller/prometheus_bot
+    path: src/github.com/ekhvalov/prometheus_bot
 outputs:
   - name: release
   - name: mail
@@ -16,7 +16,7 @@ run:
       git config --global url."https://".insteadOf git://
       export GOPATH=$PWD MAILTMPL=$PWD/mail PATH=$PATH:$PWD/bin
       # Setup project path
-      cd src/github.com/inCaller/prometheus_bot
+      cd src/github.com/ekhvalov/prometheus_bot
       git log -1 --pretty="CI failed: %h %s"    | tee $MAILTMPL/subject_fail
       git log -1 --pretty="CI passed: %h %s"    | tee $MAILTMPL/subject_success
       git log -1 --pretty="%ce"                 | tee $MAILTMPL/to
