@@ -37,7 +37,7 @@ type Alerts struct {
 }
 
 type Alert struct {
-	Status       map[string]interface{} `json:"status"`
+	Status       string                 `json:"status"`
 	Labels       map[string]interface{} `json:"labels"`
 	Annotations  map[string]interface{} `json:"annotations"`
 	StartsAt     string                 `json:"startsAt"`
